@@ -1,0 +1,6 @@
+<app-header></app-header>
+<div class="product-grid">
+    <ng-container *ngFor="let item of products;">
+        <app-product [product]="item" (productClicked)="addProductCar($event)"></app-product>
+    </ng-container>
+</div>
