@@ -2,4 +2,7 @@
     <ng-container *ngFor="let item of products;">
         <app-product [product]="item" (productClicked)="addProductCar($event)"></app-product>
     </ng-container>
+    <button mat-button (click)="createProduct()">Crear Producto</button>
+    <button mat-button (click)="updateProduct()">Actualizar Producto</button>
+    <button mat-button (click)="deleteProduct()">Eliminar Producto</button>
 </div>

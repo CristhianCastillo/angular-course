@@ -1,1 +1,5 @@
-<p>footer works!</p>
+<p>footer works! {{ 1 + '1' }}</p>
+<mat-form-field class="example-full-width">
+    <input matInput [formControl]="emailFiled" type="text">
+</mat-form-field>
+<button mat-raised-button (click)="sendEmail()" [disabled]="emailFiled.invalid">Enviar</button>

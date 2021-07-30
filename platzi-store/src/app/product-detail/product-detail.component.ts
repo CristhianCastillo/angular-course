@@ -18,8 +18,11 @@ export class ProductDetailComponent implements OnInit {
     this.route.params.subscribe(params => {
         const productId = params['id'];
         console.log(productId);
-        this.product = this.productService.getProductById(productId);
+        this.fetchProduct(productId);
     });
   }
 
+  public async fetchProduct(productId: number): Promise<void> {
+    this.product = await this.productService.getProductById(productId).toPromise();
+  }
 }
