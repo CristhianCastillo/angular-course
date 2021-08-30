@@ -19,14 +19,31 @@ export class ProductsService {
   }
 
   public saveProduct(product: Product): Observable<Product> {
-    return this.httpClient.post<Product>(environment.urlApi + '/products', product);
+    return this.httpClient.post<Product>(
+      environment.urlApi + '/products',
+      product
+    );
   }
 
-  public updateProduct(id: string, product: Partial<Product>): Observable<Product> {
-    return this.httpClient.put<Product>(environment.urlApi + '/products' + '/' + id, product);
+  public updateProduct(
+    id: string,
+    product: Partial<Product>
+  ): Observable<Product> {
+    return this.httpClient.put<Product>(
+      environment.urlApi + '/products' + '/' + id,
+      product
+    );
   }
 
   public deleteProduct(id: string): Observable<Product> {
-    return this.httpClient.delete<Product>(environment.urlApi + '/products' + '/' + id);
+    return this.httpClient.delete<Product>(
+      environment.urlApi + '/products' + '/' + id
+    );
+  }
+
+  public getFile() {
+    return this.httpClient.get('assets/files/test.txt', {
+      responseType: 'text',
+    });
   }
 }

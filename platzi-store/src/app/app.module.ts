@@ -19,6 +19,7 @@ import { CoreModule } from './core/core.module';
 import { MaterialModule } from './material/material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { QuicklinkModule } from 'ngx-quicklink';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
     CoreModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    QuicklinkModule
   ],
   providers: [],
   bootstrap: [AppComponent],

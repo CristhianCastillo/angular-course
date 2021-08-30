@@ -20,9 +20,15 @@ export class ProductDetailComponent implements OnInit {
         console.log(productId);
         this.fetchProduct(productId);
     });
+    this.getFile();
   }
 
   public async fetchProduct(productId: number): Promise<void> {
     this.product = await this.productService.getProductById(productId).toPromise();
+  }
+
+  public async getFile(): Promise<void> {
+    const content =  await this.productService.getFile().toPromise();
+    console.log('Txt Content File: ', content);
   }
 }

@@ -9,6 +9,7 @@ import { HighlightDirective } from './directives/highlight/highlight.directive';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { QuicklinkModule } from 'ngx-quicklink';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     RouterModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    QuicklinkModule
   ],
   exports: [ExponentialPipe, HighlightDirective, HeaderComponent, FooterComponent],
 })

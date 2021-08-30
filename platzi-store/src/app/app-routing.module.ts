@@ -7,6 +7,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AdminGuard } from './admin.guard';
+import { PreloadService } from './core/services/preload.service';
+import { QuicklinkStrategy } from 'ngx-quicklink';
 
 const routes: Routes = [
   {
@@ -21,10 +23,12 @@ const routes: Routes = [
       {
         path: 'home',
         loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+        data: { preload: true}
       },
       {
         path: 'products',
-        component: ProductsComponent
+        component: ProductsComponent,
+        data: { preload: true}
       },
       {
         path: 'products/:id',
@@ -56,7 +60,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: QuicklinkStrategy })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
